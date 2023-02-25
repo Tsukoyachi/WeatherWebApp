@@ -1,0 +1,78 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgba(12, 10, 31, 0.2);
+}
+
+.container {
+    font-size: 16px;
+    width: 90vw;
+    max-width: 37.5em;
+    padding: 3em 1.8em;
+    background-color: rgba(12, 10, 31, 1);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 15px;
+}
+
+.search {
+    width : fit-content;
+    background-color: white;
+    padding : 1em;
+    border-radius: 20px;
+    margin : auto;
+    transform: scale(1.5);
+}
+
+input {
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.result {
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.result>* {
+    align-self: center;
+}
+
+.result > h2 {
+    font-size: 40px;
+}
+
+.result > img {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    margin: 0;
+}
+
+.detailedData {
+    padding: 20px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #1e1b2e;
+}
+
+.dataObject {
+    margin-left: 8%;
+    margin-right: 8%;
+    text-align: center;
+}
+
+.dataObject > i {
+    
+}
