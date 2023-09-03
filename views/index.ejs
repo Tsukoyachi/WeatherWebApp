@@ -1,23 +1,46 @@
 <!DOCTYPE html>
-<header>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <link rel="stylesheet" href="/css/style.css">
-</header>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
 <body>
-    <h1>Weather Web App</h1>
-    <p>Search a city and get your weather</p>
-    <form action="/" method="post">
-        <input type="text" name="location" id="location">
-        <input type="submit" value="submit">
-    </form>
-    <% if(error !== null) {%>
-        <h2><%= error %></h2>
+  <div class="container">
+    <div class="header">
+      <div class="search">
+        <h1>Weather Web App</h1>
+        <p>Search a city and get your weather</p>
+        <form action="/" method="post">
+          <input type="text" name="location" id="location">
+          <input type="submit" value="submit">
+        </form>
+      </div>
+      <% if(location !== null && iconUrl !== null && condition !== null) {%>
+      <div class="weather">
+        <img src="<%=iconUrl%>" alt="Weather condition icon">
+        <p><%=condition%></p>
+      </div>
+      <h2><%=location%></h2>
+      <% }%>
+    </div>
+    <% if(error !==null) {%>
+    <div class="result">
+      <h2>
+        <%= error %>
+      </h2>
+    </div>
     <% }%>
-    <% if(location !== null && condition !== null && iconUrl !== null && tempC !== null && tempF !== null) { %>
-        <div class="result">
-            <img src="<%=iconUrl%>" alt="Weather condition icon">
-            <h2>The weather in <%= location%> is <%= condition %> with a temperature of <%= tempC%> °C / <%= tempF%> °F.</h2>
-        </div>
+
+    <%if(location !==null && condition !==null && iconUrl !==null && tempC !==null && tempF !==null) { %>
+    <div class="result">
+      <h2>Today</h2>
+      <h2>The weather in <%= location%> is <%= condition %> with a temperature of <%= tempC%> °C / <%=
+                                        tempF%> °F.</h2>
+                                        <p>All data is provided by <a href="https://www.weatherapi.com/">Weather API</a>.</p>
+    </div>
     <% } %>
+  </div>
 </body>
+
 </html>
