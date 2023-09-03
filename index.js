@@ -3,7 +3,10 @@ const bodyParser = require("body-parser")
 const request = require('request');
 const app = express()
 const port = 3000
-const apiKey = "8a40e3616c8044179bf212257230309"
+
+//Load secret from the dotenv file
+require("dotenv").config()
+const apiKey = process.env.API_KEY
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'));
